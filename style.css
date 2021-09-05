@@ -1,0 +1,348 @@
+body {
+  background-color: thistle;
+}
+.navbar {
+  background-color: #483d8b;
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+  padding-top: 15px;
+}
+
+.nav-box {
+  border-radius: 5px;
+  background-color: white;
+  margin: 10px;
+  padding: 5px;
+}
+
+.room-type {
+  border: black dotted 2px;
+}
+
+.nav-box-2 {
+  border-right: black solid 2px;
+  padding: 10px;
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .nav-box-2 {
+    border: 0px solid !important;
+  }
+}
+
+.price-labels {
+  margin-bottom: 10px;
+}
+
+#max-price {
+  float: right;
+}
+
+.check-in {
+  border-left: rgb(0, 153, 255) solid 10px;
+}
+
+.check-out {
+  border-left: orange solid 10px;
+}
+
+.sort-by {
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.map {
+  text-align: center;
+  position: relative;
+  margin-top: 10px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  max-height: 345px;
+}
+
+#googlemap-pic {
+  width: 50%;
+  height: 80px;
+  margin: 10px;
+}
+
+#map-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.hotel {
+  border: rgb(114, 104, 104) solid 1px;
+}
+
+.checked {
+  color: orange;
+}
+
+.hotel-row {
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+.r-border {
+  border-right: rgb(114, 104, 104) solid 2px;
+}
+
+@media (max-width: 992px) {
+  .hotel-row .col-lg-4 {
+    border-right: 0px solid rgb(114, 104, 104);
+  }
+
+  .hotel-row .col-lg-4:nth-child(2) {
+    border-bottom: rgb(114, 104, 104) solid 2px;
+  }
+}
+
+@media (max-width: 575px) {
+  .r-border {
+    border-bottom: rgb(114, 104, 104) solid 2px;
+    border-right: rgb(114, 104, 104) solid 0px;
+  }
+}
+
+.hotel-row .col-lg-4:last-child {
+  border-right: 0px solid rgb(114, 104, 104);
+}
+
+.hotel-info p {
+  margin-top: 55px;
+}
+
+#rating-num {
+  background-color: teal;
+  padding: 2px;
+  border: rgb(114, 104, 104) solid 1px;
+}
+
+.outer-info {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+#info {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 1px;
+}
+
+.outer-websites {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.b-border {
+  width: 95%;
+  border-bottom: rgb(114, 104, 104) solid 2px;
+}
+
+.hotel-website {
+  background-color: blanchedalmond;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 1px;
+}
+
+.websites {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 1px;
+}
+
+.more-deals {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 10px 1px 1px 1px;
+}
+
+#deals {
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+}
+
+.outer-total-cost {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.min-height {
+  min-height: 200px;
+}
+
+#total-cost {
+  height: 80px;
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  top: 50%;
+  margin-top: -70px;
+}
+
+.deal-button {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#hprice,
+.card-title,
+.total-price {
+  color: green;
+}
+
+#deal-button {
+  width: 90%;
+}
+
+.wrapper {
+  max-width: 90%;
+  margin: 10px auto;
+}
+
+.wrapper .search-input {
+  position: relative;
+  background: #fff;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
+}
+
+.search-input input {
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-input .icon {
+  height: 55px;
+  width: 55px;
+  line-height: 55px;
+  position: absolute;
+  top: 0;
+  right: 100px;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.search-input button {
+  height: 55px;
+  width: 100px;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  background-color: rgb(0, 153, 255);
+  text-align: center;
+  font-size: 18px;
+}
+
+.search-input .autocom-box {
+  padding: 0px;
+  max-height: 280px;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.autocom-box li {
+  list-style: none;
+  padding: 8px 12px;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+  display: none;
+}
+
+.autocom-box li:hover {
+  background: #efefef;
+}
+
+.search-input.active .autocom-box {
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.search-input.active .autocom-box li {
+  display: block;
+}
+
+#no-results {
+  padding-top: 300px;
+  padding-left: 50px;
+}
+
+/* Modal */
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  display: flex;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

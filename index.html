@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Assignment 5</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <form autocomplete="off" class="mx-2 my-auto d-inline w-100">
+        <div class="wrapper">
+          <div class="search-input input-group">
+            <input id="search-input" type="text" placeholder="Search city" />
+
+            <div class="autocom-box"></div>
+            <div class="icon"><i class="fa fa-search"></i></div>
+            <button
+              id="search-button"
+              class="btn btn-outline-secondary"
+              type="button"
+            >
+              SEARCH
+            </button>
+          </div>
+        </div>
+      </form>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="nav-box check-in">
+              <h5 class="card-title">Check-in</h5>
+              <input
+                placeholder="Selected date"
+                type="date"
+                id="check-in"
+                class="form-control datepicker"
+              />
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="nav-box check-out">
+              <h5 class="card-title">Check-out</h5>
+              <input
+                placeholder="Selected date"
+                type="date"
+                id="check-out"
+                class="form-control datepicker"
+              />
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="nav-box">
+              <h5 class="card-title">Room type</h5>
+              <select class="form-control room-type">
+                <option selected disabled>Select room type</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="price-box nav-box-2 col-lg-3">
+            <!-- <div class="form-group"> -->
+            <span>Price </span>
+            <span id="current-price"></span>
+
+            <input
+              type="range"
+              class="form-control-range"
+              id="formControlRange"
+              min=""
+              max=""
+              step="1"
+            />
+            <div class="price-labels">
+              <span id="min-price"></span>
+              <span id="max-price"></span>
+            </div>
+            <!-- </div> -->
+          </div>
+          <div class="nav-box-2 col-lg-3">
+            <p>Property type</p>
+            <select class="form-control property-type">
+              <option value="all">All</option>
+              <option value="0">0 Stars</option>
+              <option value="1">1 Star</option>
+              <option value="2">2 Stars</option>
+              <option value="3">3 Stars</option>
+              <option value="4">4 Stars</option>
+              <option value="5">5 Stars</option>
+            </select>
+          </div>
+          <div class="nav-box-2 col-lg-3">
+            <p>Guest rating</p>
+            <select class="form-control guest-rating">
+              <option value="all">All</option>
+              <option value="Okay">0-2 Okay</option>
+              <option value="Fair">2-6 Fair</option>
+              <option value="Good">6-7 Good</option>
+              <option value="Very Good">7-8.5 Very Good</option>
+              <option value="Excellent">8.5-10 Excellent</option>
+            </select>
+          </div>
+          <div class="nav-box-2 col-lg-3">
+            <p>Hotel Location</p>
+            <select class="form-control hotel-location">
+              <option value="all">All</option>
+            </select>
+          </div>
+          <!-- <div class="nav-box-2 col">
+            <p>Filters</p>
+            <select class="form-control filters">
+              <option value="all">All</option>
+            </select>
+          </div> -->
+        </div>
+      </div>
+    </nav>
+    <div id="ajaxSuccess">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="map">
+            <img
+              id="googlemap-pic"
+              src="GoogleMapTA.jpg"
+              alt="google map picture"
+            />
+            <button id="map-button" class="btn btn-primary" type="button">
+              View map
+            </button>
+            <!-- The Modal from w3school-->
+            <div id="myModal" class="modal">
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Google Map</h2>
+                <iframe
+                  id="map-iframe"
+                  src=""
+                  height="550"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="sort-by">
+            <p><strong>Sort By</strong></p>
+            <select class="form-control sort-selection">
+              <option value="all">All</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="all-hotels"></div>
+      <!-- <h3 id="no-results"></h3> -->
+    </div>
+
+    <div id="ajaxError"></div>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
